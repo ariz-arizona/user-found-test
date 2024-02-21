@@ -1,0 +1,19 @@
+@import url(../node_modules/ant-design-vue/dist/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'variables.scss';
+
+body {
+    font-family: $fontFamily, sans-serif;
+}
+
+.container {
+    width: 1270px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 32px;
+    color: $primaryColor;
+}
