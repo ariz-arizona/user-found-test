@@ -12,8 +12,34 @@ body {
     margin: 0 auto;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 32px;
-    color: $primaryColor;
+.header {
+    &_logo {
+        &_link {
+            font-weight: 700;
+            font-size: 32px;
+            color: $primaryColor;
+
+            &:hover {
+                color: darken($color: $primaryColor, $amount: 15)
+            }
+
+            &:active {
+                color: lighten($color: $primaryColor, $amount: 15)
+            }
+        }
+    }
+
+    &_user {
+        &_link {
+            color: $secondaryColor;
+
+            &:hover {
+                color: mix($secondaryColor, $primaryColor, 10%)
+            }
+
+            &:active {
+                color: mix($secondaryColor, $primaryColor, 5%)
+            }
+        }
+    }
 }
