@@ -70,3 +70,42 @@ body {
     }
 
 }
+
+.user {
+    &_notfound {}
+
+    &_img {}
+
+    &_content {
+        dt {
+            float: left;
+            margin-right: 0.5em;
+        }
+
+        dd {
+            color: $textColor
+        }
+    }
+
+    &_about {
+        color: $textColor;
+        display: inline-block;
+    }
+
+    &_list {
+        &_item {
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(#000, 0.1);
+            border: 1px solid transparent;
+
+            &:hover {
+                border-block-end: 1px solid;
+                border-color: #E0E0E0;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 1.2rem;
+            }
+        }
+    }
+}
