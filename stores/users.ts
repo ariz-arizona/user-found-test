@@ -34,13 +34,14 @@ export const useUsersStore = defineStore('usersStore', {
     },
     clean() {
       this.list = []
+      this.active = null
     },
     setActive(id: number) {
       this.active = id
     },
     getActive() {
       if (!this.active) {
-        return []
+        return false
       }
       return this.list.find(el => el.id === this.active)
     }
