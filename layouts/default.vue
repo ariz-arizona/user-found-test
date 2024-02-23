@@ -13,7 +13,7 @@ import variables from 'assets/variables.module.scss';
         components: {
             Input: {
                 borderRadius: 8,
-                lineHeight: 2.2,
+                lineHeight: 2.8,
             }
         }
     }">
