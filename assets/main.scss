@@ -9,10 +9,12 @@ body {
 .container {
     width: 1270px;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .header {
+    margin-bottom: 26px;
+
     &_logo {
         &_link {
             font-weight: 700;
@@ -42,4 +44,29 @@ body {
             }
         }
     }
+}
+
+.content {
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(#000, 0.1);
+
+    &_row {
+        min-height: 50vh;
+    }
+
+    &_sidebar,
+    &_main {
+        padding: 24px;
+    }
+
+    &_sidebar {
+        border-right: 1px solid #DEDEDD;
+    }
+
+    &_main {
+        display: flex;
+        align-content: center;
+
+    }
+
 }

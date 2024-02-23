@@ -1,8 +1,4 @@
 <script setup lang="ts">
-
-const website = useWebsiteStore()
-
-await callOnce(website.fetch)
 </script>
 
 <template>
