@@ -41,7 +41,7 @@ export const useUsersStore = defineStore('usersStore', {
     },
     getActive() {
       if (!this.active) {
-        return false
+        return
       }
       return this.list.find(el => el.id === this.active)
     }

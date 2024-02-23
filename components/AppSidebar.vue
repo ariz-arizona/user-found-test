@@ -3,6 +3,12 @@ const value = ref<string>('');
 const users = useUsersStore();
 const isEmpty = ref(<boolean>true);
 
+
+if (users.list.length && users.query) {
+    value.value = Object.values(users.query).join(' ')
+    isEmpty.value = false
+}
+
 const onInputChange = async (e: Event) => {
     const val = value.value
     const v = parseInt(val)
@@ -34,7 +40,7 @@ const handleUserClick = (e: number) => {
 
             <a-typography-title :level="5">Поиск сотрудников</a-typography-title>
             <a-input v-model:value="value" placeholder="Введите айди пользователя" @change="onInputChange"
-                :disabled="users.loading" :allow-clear="true" size="large">
+                :disabled="users.loading" :allow-clear="true">
                 <template #suffix>
                     <span v-if="!isNaN(parseInt(value))">id</span>
                     <span v-else-if="value.length > 3">username</span>

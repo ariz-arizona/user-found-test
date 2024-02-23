@@ -2,7 +2,10 @@
 import type { User } from '~/types/users';
 
 const users = useUsersStore();
-let active = reactive(<User>users.getActive())
+let active = reactive(<User>{});
+if (users.active) {
+    active =  Object.assign(active, users.getActive())
+}
 
 users.$onAction(({ name, after }) => {
     after(() => {

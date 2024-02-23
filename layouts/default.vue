@@ -8,8 +8,14 @@ import variables from 'assets/variables.module.scss';
         token: {
             colorPrimary: variables.colorPrimary,
             fontFamily: variables.fontFamily,
-            colorTextBase: variables.colorTextBase
+            colorTextBase: variables.colorTextBase,
         },
+        components: {
+            Input: {
+                borderRadius: 8,
+                lineHeight: 2.2,
+            }
+        }
     }">
         <div class="container">
             <AppHeader />
