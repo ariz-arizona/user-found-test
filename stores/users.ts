@@ -27,7 +27,13 @@ export const useUsersStore = defineStore('usersStore', {
       }
       this.query = query
       this.loading = true
-      const users = await $fetch<User[]>('https://jsonplaceholder.typicode.com/users', { query })
+      const users = await $fetch<User[]>('https://jsonplaceholder.typicode.com/users', {
+        query,
+        onResponseError: async (r) => {
+          this.loading = false
+          this.error = `Произошла ошибка: ${r.response.status} ${r.response.statusText}`
+        }
+      })
 
       this.loading = false
       this.list = users

@@ -4,7 +4,7 @@ import type { User } from '~/types/users';
 const users = useUsersStore();
 let active = reactive(<User>{});
 if (users.active) {
-    active =  Object.assign(active, users.getActive())
+    active = Object.assign(active, users.getActive())
 }
 
 users.$onAction(({ name, after }) => {
@@ -17,7 +17,12 @@ users.$onAction(({ name, after }) => {
 </script>
 <template>
     <a-space direction="vertical" style="width: 100%;" class="user">
-        <a-row v-if="!users.active" align="middle" justify="center" style="min-height: 50vh;">
+        <a-row v-if="users.error" align="middle" justify="center" style="min-height: 50vh;">
+            <a-col>
+                <a-alert type="error" :message="users.error" />
+            </a-col>
+        </a-row>
+        <a-row v-else-if="!users.active" align="middle" justify="center" style="min-height: 50vh;">
             <a-col>
                 <a-typography class="user_notfound">Выберите сотрудника, чтобы посмотреть его профиль</a-typography>
             </a-col>
